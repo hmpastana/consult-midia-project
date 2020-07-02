@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    @@include("../partials/head.html", {
+    "title": "Dashkit"
+    })
+  </head>
+  <body>
+
+    <!-- MODALS
+    ================================================== -->
+    @@include("../partials/modals.html")
+
+    <!-- NAVIGATION
+    ================================================== -->
+    @@if (navPosition == 'sidenav' || navPosition == 'combo' || demoMode) {
+    @@if (sidebarSize == 'base' || demoMode) {
+    @@include("../partials/sidebar.html", {
+    "category": "",
+    "subcategory": "",
+    "page": "components.html"
+    })
+    }
+    @@if (sidebarSize == 'small' || demoMode) {
+    @@include("../partials/sidebar-sm.html", {
+    "category": "",
+    "subcategory": "",
+    "page": "components.html"
+    })
+    }
+    }
+    @@if (navPosition == 'topnav' || demoMode) {
+    @@include("../partials/topnav.html", {
+    "category": "",
+    "subcategory": "",
+    "page": "components.html"
+    })
+    }
+
+    <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">
+
+      @@if (navPosition == 'combo' || demoMode) {
+      @@include("../partials/topbar.html")
+      }
+
+      <div class="@@if(navPosition=='sidenav'||navPosition=='combo'){container-fluid}@@if(navPosition=='topnav'){container}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            @@include("../partials/docs/alerts.html")
+            @@include("../partials/docs/autosize.html")
+            @@include("../partials/docs/avatars.html")
+            @@include("../partials/docs/badges.html")
+            @@include("../partials/docs/breadcrumb.html")
+            @@include("../partials/docs/button-group.html")
+            @@include("../partials/docs/buttons.html")
+            @@include("../partials/docs/cards.html")
+            @@include("../partials/docs/charts.html")
+            @@include("../partials/docs/checklist.html")
+            @@include("../partials/docs/dropdowns.html")
+            @@include("../partials/docs/forms.html")
+            @@include("../partials/docs/icons.html")
+            @@include("../partials/docs/kanban.html")
+            @@include("../partials/docs/lists.html")
+            @@include("../partials/docs/map.html")
+            @@include("../partials/docs/modals.html")
+            @@include("../partials/docs/navbar.html")
+            @@include("../partials/docs/navs.html")
+            @@include("../partials/docs/page-headers.html")
+            @@include("../partials/docs/pagination.html")
+            @@include("../partials/docs/popovers.html")
+            @@include("../partials/docs/progress.html")
+            @@include("../partials/docs/social-posts.html")
+            @@include("../partials/docs/spinners.html")
+            @@include("../partials/docs/tables.html")
+            @@include("../partials/docs/toasts.html")
+            @@include("../partials/docs/tooltips.html")
+            @@include("../partials/docs/typography.html")
+            @@include("../partials/docs/utilities.html")
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+    @@include("../partials/scripts.html")
+
+  </body>
+</html>

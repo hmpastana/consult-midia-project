@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    @@include("partials/head.html", {
+    "title": "Dashkit"
+    })
+  </head>
+  <body>
+
+    <!-- MODALS
+    ================================================== -->
+    @@include("partials/modals.html")
+
+    <!-- NAVIGATION
+    ================================================== -->
+    @@if (navPosition == 'sidenav' || navPosition == 'combo' || demoMode) {
+    @@if (sidebarSize == 'base' || demoMode) {
+    @@include("partials/sidebar.html", {
+    "category": "pages",
+    "subcategory": "account",
+    "page": "account-notifications.html"
+    })
+    }
+    @@if (sidebarSize == 'small' || demoMode) {
+    @@include("partials/sidebar-sm.html", {
+    "category": "pages",
+    "subcategory": "account",
+    "page": "account-notifications.html"
+    })
+    }
+    }
+    @@if (navPosition == 'topnav' || demoMode) {
+    @@include("partials/topnav.html", {
+    "category": "pages",
+    "subcategory": "account",
+    "page": "account-notifications.html"
+    })
+    }
+
+
+    <!-- MAIN CONTENT
+    ================================================== -->
+    <div class="main-content">
+
+      @@if (navPosition == 'combo' || demoMode) {
+      @@include("partials/topbar.html")
+      }
+
+      <div class="@@if(navPosition=='sidenav'||navPosition=='combo'){container-fluid}@@if(navPosition=='topnav'){container}">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <h6 class="header-pretitle">
+                      Overview
+                    </h6>
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      Account
+                    </h1>
+
+                  </div>
+                </div> <!-- / .row -->
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Nav -->
+                    <ul class="nav nav-tabs nav-overflow header-tabs">
+                      <li class="nav-item">
+                        <a href="account-general.html" class="nav-link">
+                          General
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="account-billing.html" class="nav-link">
+                          Billing
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="account-members.html" class="nav-link">
+                          Members
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="account-security.html" class="nav-link">
+                          Security
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="account-notifications.html" class="nav-link active">
+                          Notifications
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card">
+              <div class="card-header">
+
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  Notifications
+                </h4>
+
+                <!-- Button -->
+                <button class="btn btn-sm btn-white">
+                  Disable all
+                </button>
+
+              </div>
+              <div class="table-responsive">
+                <table class="table table-sm table-nowrap card-table">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th class="text-center">Call</th>
+                      <th class="text-center">Email</th>
+                      <th class="text-center">SMS</th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-size-base">
+                    <tr>
+                      <td>
+                        Direct messages
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="emailCheckboxOne" checked>
+                          <label class="custom-control-label" for="emailCheckboxOne"></label>
+                        </div>
+
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="smsCheckboxOne" checked>
+                          <label class="custom-control-label" for="smsCheckboxOne"></label>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Reminders
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="emailCheckboxTwo" checked>
+                          <label class="custom-control-label" for="emailCheckboxTwo"></label>
+                        </div>
+
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="smsCheckboxTwo" checked>
+                          <label class="custom-control-label" for="smsCheckboxTwo"></label>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        API Limits
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="callCheckboxThree">
+                          <label class="custom-control-label" for="callCheckboxThree"></label>
+                        </div>
+
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="emailCheckboxThree" checked>
+                          <label class="custom-control-label" for="emailCheckboxThree"></label>
+                        </div>
+
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="smsCheckboxThree" checked>
+                          <label class="custom-control-label" for="smsCheckboxThree"></label>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Policy & Community
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="callCheckboxFour">
+                          <label class="custom-control-label" for="callCheckboxFour"></label>
+                        </div>
+
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="emailCheckboxFour" checked>
+                          <label class="custom-control-label" for="emailCheckboxFour"></label>
+                        </div>
+
+                      </td>
+                      <td class="text-center">
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox mr-n3">
+                          <input type="checkbox" class="custom-control-input" id="smsCheckboxFour" checked>
+                          <label class="custom-control-label" for="smsCheckboxFour"></label>
+                        </div>
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card">
+              <div class="card-header">
+
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  Subscriptions
+                </h4>
+
+                <!-- Button -->
+                <button class="btn btn-sm btn-white">
+                  Unsubscribe all
+                </button>
+
+              </div>
+              <div class="card-body">
+
+                <!-- List group -->
+                <div class="list-group list-group-flush my-n3">
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <h4 class="font-weight-base mb-1">
+                          Sales & Promotions
+                        </h4>
+
+                        <!-- Small -->
+                        <small class="text-muted">
+                          We only notify you for significant promotions
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Switch -->
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="subscriptionsSwitchOne" checked>
+                          <label class="custom-control-label" for="subscriptionsSwitchOne"></label>
+                        </div>
+
+                      </div>
+                    </div> <!-- / .row -->
+                  </div>
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <h4 class="font-weight-base mb-1">
+                          Product updates
+                        </h4>
+
+                        <!-- Small -->
+                        <small class="text-muted">
+                          Major changes in our product offering
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Switch -->
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="subscriptionsSwitchTwo" checked>
+                          <label class="custom-control-label" for="subscriptionsSwitchTwo"></label>
+                        </div>
+
+                      </div>
+                    </div> <!-- / .row -->
+                  </div>
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <h4 class="font-weight-base mb-1">
+                          Newsletter
+                        </h4>
+
+                        <!-- Small -->
+                        <small class="text-muted">
+                          Updates on what’s going on here at Landkit.
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Switch -->
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="subscriptionsSwitchThree" checked>
+                          <label class="custom-control-label" for="subscriptionsSwitchThree"></label>
+                        </div>
+
+                      </div>
+                    </div> <!-- / .row -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <br>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+
+    </div> <!-- / .main-content -->
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+    @@include("partials/scripts.html")
+
+  </body>
+</html>

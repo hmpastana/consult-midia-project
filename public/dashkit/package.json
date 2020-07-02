@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "Dashkit",
+  "version": "1.6.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "Good Themes",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-npm-dist": "^1.0.3",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^4.0.1"
+  },
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8",
+    "autosize": "^4.0.2",
+    "bootstrap": "^4.4.1",
+    "chart.js": "^2.9.3",
+    "dropzone": "^5.7.0",
+    "flatpickr": "^4.6.3",
+    "highlightjs": "^9.16.2",
+    "jquery": "^3.4.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "list.js": "^1.5.0",
+    "quill": "^1.3.7",
+    "save": "^2.4.0",
+    "select2": "^4.0.13"
+  }
+}
