@@ -1,73 +1,114 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<head>
+    @include('layouts.head')
+</head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+<body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <!-- CONTENT
+        ================================================== -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                <!-- Image -->
+                <div class="text-center">
+                    <img src="{{ asset('dashkit/src/assets/img/illustrations/happiness.svg')}}" alt="..." class="img-fluid">
                 </div>
+
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+            <div class="col-12 col-md-5 col-xl-4 order-md-1 my-5">
+
+                <!-- Heading -->
+                <h1 class="display-4 text-center mb-3">
+                    Sign in
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-muted text-center mb-5">
+                    Free access to our dashboard.
+                </p>
+
+                <!-- Form -->
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <!-- Email address -->
+                    <div class="form-group">
+
+                        <!-- Label -->
+                        <label>Email Address</label>
+
+                        <!-- Input -->
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="name@address.com" required autocomplete="email" autofocus>
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <div class="row">
+                            <div class="col">
+
+                                <!-- Label -->
+                                <label>Password</label>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <!-- Help text -->
+                                <a href="password-reset-illustration.html" class="form-text small text-muted">
+                                    Forgot password?
+                                </a>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                        <!-- Input group -->
+                        <div class="input-group input-group-merge">
+
+                            <!-- Input -->
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter your password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button class="btn btn-lg btn-block btn-primary mb-3">
+                        Sign in
+                    </button>
+
+                    <!-- Link -->
+                    <div class="text-center">
+                        <small class="text-muted text-center">
+                            Don't have an account yet? <a href="sign-up-illustration.html">Sign up</a>.
+                        </small>
+                    </div>
+
+                </form>
+
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+
+    <!-- JAVASCRIPT
+        ================================================== -->
+    @include('layouts.scripts')
+
+</body>
+
+</html>

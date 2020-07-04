@@ -255,7 +255,12 @@
                 <a href="dashkit/src/profile-posts.html" class="dropdown-item">Profile</a>
                 <a href="dashkit/src/account-general.html" class="dropdown-item">Settings</a>
                 <hr class="dropdown-divider">
-                <a href="dashkit/src/sign-in.html" class="dropdown-item">Logout</a>
+                <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        Logout
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </a>
             </div>
 
             </div>
