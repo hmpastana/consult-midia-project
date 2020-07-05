@@ -5,6 +5,7 @@ Como solicitado, eu criei o sistema usando a última versão do Laravel Framewor
 PS: Prepare o arquivo .env antes de rodar os comandos abaixo para que as migrations funcionem corretamente.
 
 - composer update
+- Vá para o diretório public/dashkit e rode: npm install
 - php artisan key: generate
 - php artisan migrate:refresh --seed
 
@@ -23,6 +24,7 @@ On this project, I used PostgreSQL database.
 PS: Prepare the file .env before running the command below, in order to run the migration correctly.
 
 - composer update
+- Go to the directory public/dashkit and run: npm install
 - php artisan key: generate
 - php artisan migrate:refresh --seed
 

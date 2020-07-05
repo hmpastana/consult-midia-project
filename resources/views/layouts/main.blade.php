@@ -15,7 +15,7 @@
     @include('layouts.sidebar')
 
     <div class="main-content">
-        @if(Request::segment(1) == 'profile')
+        @if(Request::segment(2) == 'profile')
             @include('layouts.header_profile')
         @else
             @include('layouts.header')
