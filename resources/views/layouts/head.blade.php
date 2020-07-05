@@ -1,8 +1,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
-
-<title>@yield('title')</title>
+<link rel="icon" href="{{ asset('dashkit/src/favicon.ico')}}" type="image/x-icon">
 
 <!-- Libs CSS -->
 <link rel="stylesheet" href="{{ asset('dashkit/src/assets/fonts/feather/feather.css')}}" />

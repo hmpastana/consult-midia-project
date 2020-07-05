@@ -7,17 +7,17 @@
                 <div class="col">
                     <!-- Pretitle -->
                     <h6 class="header-pretitle">
-                        Overview
+                        @lang('titles.overview')
                     </h6>
                     <!-- Title -->
                     <h1 class="header-title">
-                        Dashboard
+                        @lang('titles.dashboard')
                     </h1>
                 </div>
                 <div class="col-auto">
                     <!-- Button -->
                     <a href="#!" class="btn btn-primary lift">
-                        Create Report
+                        @lang('titles.create_report')
                     </a>
                 </div>
             </div> <!-- / .row -->

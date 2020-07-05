@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function updateUser($request)
+    {
+        // printR($request->toArray());
+        $edit = self::where('id', '=', $request->user_id)
+        ->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'birthday' => $request->birthday,
+            'website' => $request->website,
+            'location' => $request->location
+        ]);
+
+        return $edit;
+    }
 }

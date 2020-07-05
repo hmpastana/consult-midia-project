@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Dashboard')
+@section('title', Lang::get('titles.dashboard'))
 
 @section('css')
 @parent
@@ -21,7 +21,7 @@
 
                                 <!-- Title -->
                                 <h6 class="text-uppercase text-muted mb-2">
-                                    Value
+                                    @lang('titles.value')
                                 </h6>
 
                                 <!-- Heading -->
@@ -55,7 +55,7 @@
 
                                 <!-- Title -->
                                 <h6 class="text-uppercase text-muted mb-2">
-                                    Total hours
+                                    @lang('titles.total_hours')
                                 </h6>
 
                                 <!-- Heading -->
@@ -85,7 +85,7 @@
 
                                 <!-- Title -->
                                 <h6 class="text-uppercase text-muted mb-2">
-                                    Exit %
+                                    @lang('titles.exit') %
                                 </h6>
 
                                 <!-- Heading -->
@@ -117,7 +117,7 @@
 
                                 <!-- Title -->
                                 <h6 class="text-uppercase text-muted mb-2">
-                                    Avg. Time
+                                    @lang('titles.avg_time')
                                 </h6>
 
                                 <!-- Heading -->
@@ -147,12 +147,12 @@
 
                         <!-- Title -->
                         <h4 class="card-header-title">
-                            Conversions
+                            @lang('titles.conversions')
                         </h4>
 
                         <!-- Caption -->
                         <span class="text-muted mr-3">
-                            Last year comparision:
+                            @lang('titles.last_year_comparision'):
                         </span>
 
                         <!-- Switch -->
@@ -180,19 +180,19 @@
 
                         <!-- Title -->
                         <h4 class="card-header-title">
-                            Traffic Channels
+                            @lang('titles.traffic_channels')
                         </h4>
 
                         <!-- Tabs -->
                         <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
                             <li class="nav-item" data-toggle="chart" data-target="#trafficChart" data-trigger="click" data-action="toggle" data-dataset="0">
                                 <a href="#" class="nav-link active" data-toggle="tab">
-                                    All
+                                    @lang('titles.all')
                                 </a>
                             </li>
                             <li class="nav-item" data-toggle="chart" data-target="#trafficChart" data-trigger="click" data-action="toggle" data-dataset="1">
                                 <a href="#" class="nav-link" data-toggle="tab">
-                                    Direct
+                                    @lang('titles.direct')
                                 </a>
                             </li>
                         </ul>
@@ -221,11 +221,11 @@
 
                         <!-- Title -->
                         <h4 class="card-header-title">
-                            Projects
+                            @lang('titles.projects')
                         </h4>
 
                         <!-- Link -->
-                        <a href="project-overview.html" class="small">View all</a>
+                        <a href="project-overview.html" class="small">@lang('titles.view_all')</a>
 
                     </div>
                     <div class="card-body">
@@ -264,13 +264,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -310,13 +310,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -356,13 +356,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -402,13 +402,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -429,24 +429,24 @@
 
                         <!-- Title -->
                         <h4 class="card-header-title">
-                            Sales
+                            @lang('titles.sales')
                         </h4>
 
                         <!-- Nav -->
                         <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
                             <li class="nav-item" data-toggle="chart" data-target="#salesChart" data-trigger="click" data-action="toggle" data-dataset="0">
                                 <a class="nav-link active" href="#" data-toggle="tab">
-                                    All
+                                    @lang('titles.all')
                                 </a>
                             </li>
                             <li class="nav-item" data-toggle="chart" data-target="#salesChart" data-trigger="click" data-action="toggle" data-dataset="1">
                                 <a class="nav-link" href="#" data-toggle="tab">
-                                    Direct
+                                    @lang('titles.direct')
                                 </a>
                             </li>
                             <li class="nav-item" data-toggle="chart" data-target="#salesChart" data-trigger="click" data-action="toggle" data-dataset="2">
                                 <a class="nav-link" href="#" data-toggle="tab">
-                                    Organic
+                                    @lang('titles.organic')
                                 </a>
                             </li>
                         </ul>
@@ -475,7 +475,7 @@
 
                                 <!-- Title -->
                                 <h4 class="card-header-title">
-                                    Goals
+                                    @lang('titles.goals')
                                 </h4>
 
                             </div>
@@ -483,7 +483,7 @@
 
                                 <!-- Button -->
                                 <a href="#!" class="btn btn-sm btn-white">
-                                    Export
+                                    @lang('titles.export')
                                 </a>
 
                             </div>
@@ -495,26 +495,26 @@
                                 <tr>
                                     <th>
                                         <a href="#" class="text-muted list-sort" data-sort="goal-project">
-                                            Goal
+                                            @lang('titles.goals')
                                         </a>
                                     </th>
                                     <th>
                                         <a href="#" class="text-muted list-sort" data-sort="goal-status">
-                                            Status
+                                            @lang('titles.status')
                                         </a>
                                     </th>
                                     <th>
                                         <a href="#" class="text-muted list-sort" data-sort="goal-progress">
-                                            Progress
+                                            @lang('titles.progress')
                                         </a>
                                     </th>
                                     <th>
                                         <a href="#" class="text-muted list-sort" data-sort="goal-date">
-                                            Due date
+                                            @lang('titles.due_date')
                                         </a>
                                     </th>
                                     <th class="text-right">
-                                        Team
+                                        @lang('titles.team')
                                     </th>
                                     <th></th>
                                 </tr>
@@ -556,13 +556,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -601,13 +601,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -646,13 +646,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -688,13 +688,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -736,13 +736,13 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="#!" class="dropdown-item">
-                                                    Action
+                                                    @lang('titles.action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Another action
+                                                    @lang('titles.another_action')
                                                 </a>
                                                 <a href="#!" class="dropdown-item">
-                                                    Something else here
+                                                    @lang('titles.something_else_here')
                                                 </a>
                                             </div>
                                         </div>
@@ -764,11 +764,11 @@
 
                         <!-- Title -->
                         <h4 class="card-header-title">
-                            Recent Activity
+                            @lang('titles.recent_activity')
                         </h4>
 
                         <!-- Button -->
-                        <a class="small" href="#!">View all</a>
+                        <a class="small" href="#!">@lang('titles.view_all')</a>
 
                     </div>
                     <div class="card-body">
@@ -880,12 +880,12 @@
 
                         <!-- Title -->
                         <h4 class="card-header-title">
-                            Scratchpad Checklist
+                            @lang('titles.scratchpad_checklist')
                         </h4>
 
                         <!-- Badge -->
                         <span class="badge badge-soft-secondary">
-                            23 Archived
+                            23 @lang('titles.archieved')
                         </span>
 
                     </div>
@@ -944,14 +944,14 @@
                             <div class="col">
 
                                 <!-- Input -->
-                                <textarea class="form-control form-control-flush form-control-auto" data-toggle="autosize" rows="1" placeholder="Create a task"></textarea>
+                                <textarea class="form-control form-control-flush form-control-auto" data-toggle="autosize" rows="1" placeholder="@lang('titles.create_a_task')"></textarea>
 
                             </div>
                             <div class="col-auto">
 
                                 <!-- Button -->
                                 <button class="btn btn-sm btn-primary">
-                                    Add
+                                    @lang('titles.add')
                                 </button>
 
                             </div>

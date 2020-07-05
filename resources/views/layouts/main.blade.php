@@ -3,7 +3,8 @@
 <head>
 
     @include('layouts.head')
-
+    <title>@yield('title')</title>
+    
     @section('css')
     @show
 
@@ -14,7 +15,11 @@
     @include('layouts.sidebar')
 
     <div class="main-content">
-        @include('layouts.header')
+        @if(Request::segment(1) == 'profile')
+            @include('layouts.header_profile')
+        @else
+            @include('layouts.header')
+        @endif
 
         @yield('content')
 

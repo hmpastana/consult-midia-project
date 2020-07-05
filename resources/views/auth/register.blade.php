@@ -3,6 +3,8 @@
 
     <head>
         @include('layouts.head')
+        <title>@lang('titles.sign_up')</title>
+
     </head>
 
     <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
@@ -23,12 +25,12 @@
 
                     <!-- Heading -->
                     <h1 class="display-4 text-center mb-3">
-                        Sign up
+                        @lang('titles.sign_up')
                     </h1>
 
                     <!-- Subheading -->
                     <p class="text-muted text-center mb-5">
-                        Free access to our dashboard.
+                        @lang('titles.free_access_to_our_dashboard')
                     </p>
 
                     <!-- Form -->
@@ -39,7 +41,7 @@
 
                             <!-- Label -->
                             <label>
-                                Name
+                                @lang('titles.name')
                             </label>
 
                             <!-- Input -->
@@ -57,7 +59,7 @@
                         <div class="form-group">
                             <!-- Label -->
                             <label>
-                                Email
+                                @lang('titles.email')
                             </label>
 
                             <!-- Input -->
@@ -76,14 +78,14 @@
 
                             <!-- Label -->
                             <label>
-                                Password
+                                @lang('titles.password')
                             </label>
 
                             <!-- Input group -->
                             <div class="input-group input-group-merge">
 
                                 <!-- Input -->
-                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" name="password" required autocomplete="new-password" >
+                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="@lang('titles.enter_your_password')" name="password" required autocomplete="new-password" >
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -99,26 +101,26 @@
 
                             <!-- Label -->
                             <label>
-                                Confirm Password
+                                @lang('titles.confirm_your_password')
                             </label>
 
                             <!-- Input group -->
                             <div class="input-group input-group-merge">
 
                                 <!-- Input -->
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm your password"  required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="@lang('titles.confirm_your_password')"  required autocomplete="new-password">
                             </div>
                         </div>
 
                         <!-- Submit -->
                         <button class="btn btn-lg btn-block btn-primary mb-3">
-                            Sign up
+                            @lang('titles.sign_up')
                         </button>
 
                         <!-- Link -->
                         <div class="text-center">
                             <small class="text-muted text-center">
-                                Already have an account? <a href="sign-in-illustration.html">Log in</a>.
+                                @lang('titles.already_have_an_account') <a href="{{ route('login') }}">@lang('titles.sign_in')</a>.
                             </small>
                         </div>
 

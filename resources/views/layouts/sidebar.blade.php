@@ -7,7 +7,7 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand" href="dashkit/src/index.html">
+        <a class="navbar-brand" href="{{ route('dashboard', [ Request::Segment(1)])}}">
             <img src="{{ asset('dashkit/src/assets/img/logo.svg')}}" class="navbar-brand-img mx-auto" alt="...">
         </a>
 
@@ -53,179 +53,30 @@
           <!-- Navigation -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#sidebarDashboards" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebarDashboards"><i class="fe fe-home"></i> Dashboards</a>
-
-                <div class="collapse show" id="sidebarDashboards">
-                    <ul class="nav nav-sm flex-column">
-                        <li class="nav-item">
-                            <a href="dashkit/src/index.html" class="nav-link">Default</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="dashkit/src/dashboard-project-management.html" class="nav-link">Project Management</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link @@if(page=='widgets.html'){active}" href="dashkit/src/widgets.html"><i class="fe fe-grid"></i> Widgets</a>
+                <a class="nav-link @if(Route::currentRouteName() == 'dashboard') active @endif" href="{{route('dashboard', [ Request::Segment(1)])}}"><i class="fe fe-home"></i> @lang('titles.dashboard')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#sidebarAuth" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth"><i class="fe fe-user"></i> Authentication</a>
+                <a class="nav-link" href="#sidebarAuth" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth"><i class="fe fe-user"></i> @lang('titles.profile')</a>
                 <div class="collapse" id="sidebarAuth">
                     <ul class="nav nav-sm flex-column">
-                        <li class="nav-item">
-                            <a href="#sidebarSignIn" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignIn">Sign in</a>
-                            <div class="collapse" id="sidebarSignIn">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/sign-in-cover.html" class="nav-link">Cover</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/sign-in-illustration.html" class="nav-link">Ilustration</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/sign-in.html" class="nav-link">
-                                            Basic
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li>
+                          <a href="{{ route('profile_posts', [ Request::Segment(1)])}}" class="nav-link @if(Route::currentRouteName() == 'profile_posts') active @endif">
+                            @lang('titles.posts')
+                          </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#sidebarSignUp" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignUp">Sign up</a>
-                            <div class="collapse" id="sidebarSignUp">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/sign-up-cover.html" class="nav-link">
-                                            Cover
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/sign-up-illustration.html" class="nav-link">
-                                            Illustration
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/sign-up.html" class="nav-link">
-                                            Basic
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#sidebarPassword" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPassword">
-                                Password reset
-                            </a>
-                            <div class="collapse" id="sidebarPassword">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/password-reset-cover.html" class="nav-link">
-                                            Cover
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/password-reset-illustration.html" class="nav-link">
-                                            Illustration
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/password-reset.html" class="nav-link">
-                                            Basic
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#sidebarError" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarError">
-                                Error
-                            </a>
-                            <div class="collapse" id="sidebarError">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/error-illustration.html" class="nav-link">
-                                            Illustration
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashkit/src/error.html" class="nav-link">
-                                            Basic
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
             </li>
             <li class="nav-item d-md-none">
               <a class="nav-link" href="#sidebarModalActivity" data-toggle="modal">
-                <span class="fe fe-bell"></span> Notifications
+                <span class="fe fe-bell"></span> @lang('titles.notifications')
               </a>
             </li>
         </ul>
 
         <!-- Divider -->
         <hr class="navbar-divider my-3">
-
-        <!-- Heading -->
-        <h6 class="navbar-heading">
-        Documentation
-        </h6>
-
-          <!-- Navigation -->
-        <ul class="navbar-nav mb-md-4">
-            <li class="nav-item">
-                <a class="nav-link" href="#sidebarBasics" data-toggle="collapse" role="button" aria-expanded="@@if(category=='basics'){true}@@if( category!=='basics'){false}" aria-controls="sidebarBasics">
-                    <i class="fe fe-clipboard"></i> Basics
-                </a>
-                <div class="collapse @@if(category=='basics'){show}" id="sidebarBasics">
-                <ul class="nav nav-sm flex-column">
-                    <li class="nav-item @@if(page=='getting-started.html'){active}">
-                        <a href="dashkit/src/docs/getting-started.html" class="nav-link">
-                            Getting Started
-                        </a>
-                    </li>
-                    <li class="nav-item @@if(page=='design-file.html'){active}">
-                        <a href="dashkit/src/docs/design-file.html" class="nav-link">
-                            Design File
-                        </a>
-                    </li>
-                </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#sidebarComponents" data-toggle="collapse" role="button" aria-expanded="@@if(category=='components'){true}@@if( category!=='components'){false}" aria-controls="sidebarComponents">
-                    <i class="fe fe-book-open"></i> Components
-                </a>
-                <div class="collapse @@if(page=='components.html'){show}" id="sidebarComponents">
-                    <ul class="nav nav-sm flex-column">
-                        <li>
-                            <a href="dashkit/src/docs/components.html#tooltips" class="nav-link">
-                                Tooltips
-                            </a>
-                        </li>
-                        <li>
-                            <a href="dashkit/src/docs/components.html#typography" class="nav-link">
-                                Typography
-                            </a>
-                        </li>
-                        <li>
-                            <a href="dashkit/src/docs/components.html#utilities" class="nav-link">
-                                Utilities
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link @@if(page=='changelog.html'){active}" href="dashkit/src/docs/changelog.html">
-                <i class="fe fe-git-branch"></i> Changelog <span class="badge badge-primary ml-auto">v1.6.0</span>
-                </a>
-            </li>
-        </ul>
 
         <!-- Push content down -->
         <div class="mt-auto"></div>
@@ -244,24 +95,23 @@
             <!-- Dropup -->
             <div class="dropup">
 
-              <!-- Toggle -->
-            <a href="#" id="sidebarIconCopy" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-sm avatar-online">
-                    <img src="{{ asset('dashkit/src/assets/img/avatars/profiles/avatar-1.jpg')}}" class="avatar-img rounded-circle" alt="...">
-                </div>
-            </a>
-              <!-- Menu -->
-            <div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
-                <a href="dashkit/src/profile-posts.html" class="dropdown-item">Profile</a>
-                <a href="dashkit/src/account-general.html" class="dropdown-item">Settings</a>
-                <hr class="dropdown-divider">
-                <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                        Logout
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                  <!-- Toggle -->
+                <a href="#" id="sidebarIconCopy" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="avatar avatar-sm avatar-online">
+                        <img src="{{ asset('dashkit/src/assets/img/avatars/profiles/me.jpg')}}" class="avatar-img rounded-circle" alt="...">
+                    </div>
                 </a>
-            </div>
+                  <!-- Menu -->
+                <div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
+                    <a href="{{ route('profile_posts', [ Request::Segment(1)])}}" class="dropdown-item">@lang('titles.profile')</a>
+                    <hr class="dropdown-divider">
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            @lang('titles.logout')
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </a>
+                </div>
 
             </div>
 

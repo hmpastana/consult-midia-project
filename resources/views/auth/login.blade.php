@@ -3,6 +3,8 @@
 
 <head>
     @include('layouts.head')
+    <title>@lang('titles.sign_in')</title>
+
 </head>
 
 <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
@@ -23,12 +25,12 @@
 
                 <!-- Heading -->
                 <h1 class="display-4 text-center mb-3">
-                    Sign in
+                    @lang('titles.sign_in')
                 </h1>
 
                 <!-- Subheading -->
                 <p class="text-muted text-center mb-5">
-                    Free access to our dashboard.
+                    @lang('titles.free_access_to_our_dashboard')
                 </p>
 
                 <!-- Form -->
@@ -39,7 +41,7 @@
                     <div class="form-group">
 
                         <!-- Label -->
-                        <label>Email Address</label>
+                        <label>@lang('titles.email_address')</label>
 
                         <!-- Input -->
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="name@address.com" required autocomplete="email" autofocus>
@@ -59,14 +61,14 @@
                             <div class="col">
 
                                 <!-- Label -->
-                                <label>Password</label>
+                                <label>@lang('titles.password')</label>
 
                             </div>
                             <div class="col-auto">
 
                                 <!-- Help text -->
                                 <a href="password-reset-illustration.html" class="form-text small text-muted">
-                                    Forgot password?
+                                    @lang('titles.forgot_password')
                                 </a>
 
                             </div>
@@ -76,7 +78,7 @@
                         <div class="input-group input-group-merge">
 
                             <!-- Input -->
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter your password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="@lang('titles.enter_your_password')">
 
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -89,13 +91,13 @@
 
                     <!-- Submit -->
                     <button class="btn btn-lg btn-block btn-primary mb-3">
-                        Sign in
+                        @lang('titles.sign_in')
                     </button>
 
                     <!-- Link -->
                     <div class="text-center">
                         <small class="text-muted text-center">
-                            Don't have an account yet? <a href="sign-up-illustration.html">Sign up</a>.
+                            @lang('titles.dont_have_an_account_yet') <a href="{{ route('register') }}">@lang('titles.sign_up')</a>.
                         </small>
                     </div>
 
