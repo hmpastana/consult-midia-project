@@ -412,7 +412,7 @@
                                 <div class="col-auto">
 
                                     <!-- Link -->
-                                    <a href="{{ Auth::User()->website }}" target="_blank" class="small">
+                                    <a href="http://{{ Auth::User()->website }}" target="_blank" class="small">
                                         {{ Auth::User()->website }}
                                     </a>
 
